@@ -71,12 +71,6 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 //static const char *termcmd[]  = { "st", NULL };
 //sets urxvt as the default terminal
 static const char *termcmd[]  = { "alacritty", NULL };
-//sets ranger as the default file manager
-static const char *filemgrcmd[]  = { "alacritty -e ranger", NULL };
-//volume controls
-static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
-static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
-static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
 
 #include "shiftview.c"
 static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
@@ -84,7 +78,6 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
-        { MODKEY,                       XK_f,      spawn,          {.v = filemgrcmd } },
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
